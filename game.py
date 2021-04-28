@@ -9,7 +9,7 @@ WIDTH = 800
 HEIGHT = 600
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
-BACKGROUND_COLOR = (0, 0, 0)
+BACKGROUND_COLOR = (255, 255, 255)
 SPEED = 10
 
 player_size = 50
@@ -77,7 +77,7 @@ def set_level(score, SPEED):
         SPEED = 5
     elif score < 80:
         SPEED = 6
-    elif score < 100:
+    elif score < 90:
         SPEED = 9
     else:
         SPEED = 15
@@ -107,7 +107,7 @@ while not game_over:
     score = update_enemies_position(enemy_list, score)
     SPEED = set_level(score, SPEED)
     text = "Score: " + str(score)
-    label = myFont.render(text, 1, (255, 255, 0))
+    label = myFont.render(text, 1, (0, 0, 0))
     screen.blit(label, (WIDTH-200, HEIGHT - 40))
 
     if collision_check(enemy_list, player_position):
