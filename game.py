@@ -7,8 +7,8 @@ pygame.init()
 
 WIDTH = 800
 HEIGHT = 600
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+PINK = (255, 0, 255)
+GREEN = (0, 255, 64)
 BACKGROUND_COLOR = (255, 255, 255)
 SPEED = 10
 
@@ -60,7 +60,7 @@ def drop_enemies(enemy_list):
 
 def draw_enemies(enemy_list):
     for enemy_position in enemy_list:
-        pygame.draw.rect(screen, BLUE, (enemy_position[0], enemy_position[1], enemy_size, enemy_size))
+        pygame.draw.rect(screen, GREEN, (enemy_position[0], enemy_position[1], enemy_size, enemy_size))
 
 
 def update_enemies_position(enemy_list, score):
@@ -127,6 +127,6 @@ while not game_over:
         game_over = True
         break
     draw_enemies(enemy_list)
-    pygame.draw.rect(screen, RED, (player_position[0], player_position[1], player_size, player_size))
+    pygame.draw.rect(screen, PINK, (player_position[0], player_position[1], player_size, player_size))
     clock.tick(30)
     pygame.display.update()
