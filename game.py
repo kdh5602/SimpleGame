@@ -25,6 +25,19 @@ game_over = False
 clock = pygame.time.Clock()
 myFont = pygame.font.SysFont("monospace", 35)
 
+
+def show_gameover_screen():
+    draw_text(screen, "GAME OVER!", 64, WIDTH / 2, HEIGHT / 4)
+    pygame.display.flip()
+    watiting = True
+    while watiting:
+        clock.tick(FPS)
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+            if event.type == pygame.KEYUP:
+                waiting = False
+
 def defect_collision(player_position, enemy_position):
     p_x = player_position[0]
     p_y = player_position[1]
