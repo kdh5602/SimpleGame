@@ -77,6 +77,8 @@ def set_level(score, SPEED):
         SPEED = 5
     elif score < 80:
         SPEED = 6
+    elif score < 100:
+        SPEED = 9
     else:
         SPEED = 15
     return SPEED
